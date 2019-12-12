@@ -3,3 +3,5 @@ python:
   - "3.7"script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
   - python "Test Suite - Package.py"
+
+python test_suite.py
