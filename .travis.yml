@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 language: python
 python:
-  - "3.7"script:
-  - export PYTHONPATH=$PYTHONPATH:$(pwd)
-  - python "Test Suite - Package.py"
+  - "3.7"
 
-python test_suite.py
-=======
-language: python
-python:
-  - "3.7"script:
+script:
   - export PYTHONPATH=$PYTHONPATH:$(pwd)
-  - python "Test Suite - Package.py"
->>>>>>> d5856085a01432379970f44aab4bf5f0feae5e4d
+  - python "test_suite.py"
