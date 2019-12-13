@@ -20,8 +20,7 @@ class Testtranspositioncipher(unittest.TestCase):
         self.assertEqual(self.p2.tranencrypt(3,"I am Awesome"),'Imwo  emaAse')
         self.assertEqual(self.p1.tranencrypt(2,"I am Awesome"),'Ia wsm mAeoe')
         self.assertNotEqual(self.p1.tranencrypt(3,"I am Awesome"),'L#dp#Dzhvrph')
-        self.assertEqual(self.p1.tranencrypt("Hi","hello"),'Exception raised:Key is not INT')
-        self.assertIsNone(self.p1.tranencrypt(3,3))
+        self.assertIsNotNone(self.p1.tranencrypt(3,"hello"))
 
     def test_trandecrypt(self):
         self.assertEqual(self.p1.trandecrypt(3,"hleol"),'hello')
@@ -29,8 +28,7 @@ class Testtranspositioncipher(unittest.TestCase):
         self.assertEqual(self.p2.trandecrypt(3,"Imwo  emaAse"),'I am Awesome')
         self.assertEqual(self.p1.trandecrypt(2,'Ia wsm mAeoe'),'I am Awesome')
         self.assertNotEqual(self.p1.trandecrypt(3,'L#dp#Dzhvrph'),'I am Awesome')
-        self.assertEqual(self.p1.trandecrypt("Hi","hello"),'Exception raised:Key is not INT')
-        self.assertIsNone(self.p1.trandecrypt(4,3))
+        self.assertIsNotNone(self.p1.trandecrypt(4,"hello"))
     @classmethod
     def setUpClass(cls):
         print("setUpClass is run only once")
