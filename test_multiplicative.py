@@ -19,14 +19,14 @@ class Testmultiplicativecipher(unittest.TestCase):
         self.assertEqual(self.p4.mulencrypt("I am Awesome",3),'Y#ak#Aomcqkm')
         self.assertEqual(self.p3.mulencrypt("I am Awesome",5),'O%ai%Agumsiu')
         self.assertNotEqual(self.p3.mulencrypt("I am Awesome",3),'L#dp#Dzhvrph')
-        self.assertEqual(self.p3.mulencrypt("h",3),'Exception raised string length greter than 1 required')
+        self.assertEqual(self.p3.mulencrypt("h",3))
 
     def test_trandecrypt(self):
         self.assertEqual(self.p3.muldecrypt("vmhhq",3),'hello')
         self.assertEqual(self.p4.muldecrypt("Y#ak#Aomcqkm",3),'I am Awesome')
         self.assertEqual(self.p3.muldecrypt('O%ai%Agumsiu',5),'I am Awesome')
         self.assertNotEqual(self.p3.muldecrypt('L#dp#Dzhvrph',3),'I am Awesome')
-        self.assertEqual(self.p3.muldecrypt("h",3),'Exception raised string length greter than 1 required')
+        self.assertEqual(self.p3.muldecrypt("h",3))
     @classmethod
     def setUpClass(cls):
         print("setUpClass is run only once")
