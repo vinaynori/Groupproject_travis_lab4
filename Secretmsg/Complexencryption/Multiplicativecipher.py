@@ -1,4 +1,4 @@
-class inpsize(Exception):
+class Wronginp(Exception):
     def __init__(self,value):
         self.value=value
     def __str__(self):
@@ -9,7 +9,7 @@ class inpsize(Exception):
 class Multiplicativecipher:
     def mulencrypt(self,msg,key):
         try:
-            if type(msg)!= "str":
+            if type(msg)!= str:
                 raise(Wronginp("string required"))
             self.msg=msg
             self.key=key
@@ -43,7 +43,7 @@ class Multiplicativecipher:
 
     def muldecrypt(self,msg,key):
         try:
-            if type(msg)!= "str":
+            if type(msg)!= str:
                 raise(Wronginp("string required"))
 
             def muldecrypt(self,msg,key):
