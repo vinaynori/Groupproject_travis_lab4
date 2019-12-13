@@ -1,8 +1,8 @@
 class inpsize(Exception):
     def __init__(self,value):
         self.value=value
-    def __str__(self):
-        return (repr(self.value))
+        print("Exception")
+        return None
 
 class Reversecipher:
 
@@ -25,7 +25,7 @@ class Reversecipher:
             return res
         except inpsize as ex:
             print("Exception raised",ex.value)
-    
+
 
 
 ##Description:

@@ -20,7 +20,7 @@ class Testceasercipher(unittest.TestCase):
         self.assertEqual(self.p2.ceaserencrypt("I am Awesome"),'L#dp#Dzhvrph')
         self.assertEqual(self.p1.ceaserencrypt("I am Awesome"),'K"co"Cyguqog')
         self.assertNotEqual(self.p1.ceaserencrypt("I am Awesome"),'L#dp#Dzhvrph')
-        self.assertEqual(self.p1.ceaserencrypt(5),'Exception raised string required')
+        self.assertIsNone(self.p1.ceaserencrypt(5))
 
     def test_set_decrypt(self):
         self.assertEqual(self.p1.ceaserdecrypt("jk"),'hi')
@@ -28,7 +28,7 @@ class Testceasercipher(unittest.TestCase):
         self.assertEqual(self.p2.ceaserdecrypt("L#dp#Dzhvrph"),'I am Awesome')
         self.assertEqual(self.p1.ceaserdecrypt('K"co"Cyguqog'),'I am Awesome')
         self.assertNotEqual(self.p1.ceaserdecrypt('L#dp#Dzhvrph'),'I am Awesome')
-        self.assertEqual(self.p1.ceaserdecrypt(5),'Exception raised string required')
+        self.assertIsNone(self.p1.ceaserdecrypt(5))
 
 
     @classmethod

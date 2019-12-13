@@ -20,7 +20,7 @@ class TestReversecipher(unittest.TestCase):
         self.assertEqual(self.p2.revencrypt("I am Awesome"),'emosewA ma I')
         self.assertEqual(self.p1.revencrypt("python"),'nohtyp')
         self.assertNotEqual(self.p1.revencrypt("Soft!!wa"),'aw!tfoS')
-        self.assertEqual(self.p1.revencrypt("h"),'Exception raised string length greter than 1 required')
+        self.assertIsNone(self.p1.revencrypt("h"))
 
     def test_set_decrypt(self):
         self.assertEqual(self.p1.revdecrypt("ih"),'hi')
@@ -28,9 +28,9 @@ class TestReversecipher(unittest.TestCase):
         self.assertEqual(self.p2.revdecrypt("emosewA ma I"),'I am Awesome')
         self.assertEqual(self.p1.revdecrypt('nohtyp'),'python')
         self.assertNotEqual(self.p1.revdecrypt('L#dp#Dzhvrph'),'I am Awesome')
-        self.assertEqual(self.p1.revdecrypt("h"),'Exception raised string length greter than 1 required')
+        self.assertIsNone(self.p1.revdecrypt("h"))
 
-    
+
     @classmethod
     def setUpClass(cls):
         print("setUpClass is run only once")
