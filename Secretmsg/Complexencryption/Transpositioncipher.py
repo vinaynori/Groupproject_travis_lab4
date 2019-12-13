@@ -1,25 +1,15 @@
 import math
-class InsizeError(Exception):
-    def __init __(self, value):
-        self.value = value
-    def __str __(self):
-        return(repr(self.value ))
-
-class KeystrError(Exception):
-    def __init __(self, value):
-        self.value = value
-    def __str __(self):
-        return(repr(self.value ))
-
+class Wronginp(Exception):
+    def __init__(self,value):
+        self.value=value
+        print("Exception")
+        return None
 
 class Transpositioncipher:
     def tranencrypt(self,key,msg):
         try:
-            if type(key) != int:
-                raise(KeystrError("Key is not INT"))
-            if len(msg) <= 1:
-                raise(InsizeError("Size of msg is not enough!!"))
-
+            if type(msg)!=str:
+                raise(Wronginp("string required"))
             self.key=key
             self.msg=msg
             res = [''] * key
@@ -30,19 +20,15 @@ class Transpositioncipher:
                     pos += key
             return ''.join(res) #Cipher text
 
-        except InsizeError as ex:
-            print('Exception raised:',ex.value )
-        except KeystrError as ex:
-            print('Exception raised:',ex.value )
+        except Wronginp as ex:
+            print("Exception raised",ex.value)
 
 
 
     def trandecrypt(self,key,msg):
         try:
-            if type(key) != int:
-                raise(KeystrError("Key is not INT"))
-            if len(msg) <= 1:
-                raise(InsizeError("Size of msg is not enough!!"))
+            if type(msg)!=str:
+                raise(Wronginp("string required"))
             self.key=key
             self.msg=msg
             cols = int(math.ceil(len(msg) / float(key)))
@@ -58,7 +44,5 @@ class Transpositioncipher:
                     col = 0
                     row += 1
             return ''.join(res)
-        except InsizeError as ex:
-            print('Exception raised:',ex.value )
-        except KeystrError as ex:
-            print('Exception raised:',ex.value )
+        except Wronginp as ex:
+            print("Exception raised",ex.value)
