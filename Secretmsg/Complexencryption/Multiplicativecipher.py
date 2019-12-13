@@ -5,15 +5,10 @@ class Wronginp(Exception):
         return None
 
 class Multiplicativecipher:
-
-
     def mulencrypt(self,msg,key):
-
         try:
-
             if type(msg)!=str:
                 raise(Wronginp("string required"))
-
             self.msg=msg
             self.key=key
             alphabet="abcdefghijklmnopqrstuvwxyz"
